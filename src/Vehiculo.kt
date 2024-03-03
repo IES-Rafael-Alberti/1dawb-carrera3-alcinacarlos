@@ -19,6 +19,11 @@ open class Vehiculo(
     combustibleActual: Float,
     var kilometrosActuales: Float
 ) {
+    var paradasRepostaje: Int = 0
+        private set
+    fun incrementarParadasRepostaje() {
+        paradasRepostaje++
+    }
 
     protected val capacidadCombustible = capacidadCombustible.redondear(2)
     var combustibleActual = combustibleActual.redondear(2)

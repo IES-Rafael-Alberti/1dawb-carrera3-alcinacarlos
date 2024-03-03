@@ -31,6 +31,7 @@ open class Vehiculo(
     init {
         require(capacidadCombustible > 0) { "La capacidad del tanque debe ser un valor positivo." }
         require(combustibleActual >= 0) { "El combustible actual no puede ser negativo." }
+        require(nombre.trim().isNotBlank()) {"El nombre no puede que estar vacio"}
     }
 
     companion object {
@@ -44,7 +45,7 @@ open class Vehiculo(
      * @return Una cadena de texto que representa al vehiculo.
      */
     override fun toString(): String {
-        return "Vehículo: $nombre, Marca: $marca, Modelo: $modelo, Kilómetros Actuales: $kilometrosActuales, Combustible Actual: $combustibleActual L."
+        return "Vehículo: ${nombre.capitalizarCadaPalabra()}, Marca: $marca, Modelo: $modelo, Kilómetros Actuales: $kilometrosActuales, Combustible Actual: $combustibleActual L."
     }
 
     /**

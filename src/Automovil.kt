@@ -4,14 +4,14 @@
  * @property esHibrido Indica si el automóvil es eléctrico (true) o no (false).
  * @constructor Crea un automóvil con los parámetros especificados, heredando propiedades y funcionalidades de [Vehiculo].
  */
-class Automovil(
+open class Automovil(
     nombre: String,
     marca: String,
     modelo: String,
     capacidadCombustible: Float,
     combustibleActual: Float,
     kilometrosActuales: Float,
-    private val esHibrido: Boolean
+    val esHibrido: Boolean
 ) : Vehiculo(nombre, marca, modelo, capacidadCombustible, combustibleActual, kilometrosActuales) {
 
     companion object {
@@ -81,6 +81,6 @@ class Automovil(
      * @return Una cadena de texto que representa al automóvil.
      */
     override fun toString(): String {
-        return "Automovil(nombre=$nombre, marca=$marca, modelo=$modelo, capacidadCombustible=$capacidadCombustible, combustibleActual=$combustibleActual, kilometrosActuales=$kilometrosActuales, esElectrico=$esHibrido)"
+        return "Automovil(nombre=${nombre.capitalizarCadaPalabra()}, marca=$marca, modelo=$modelo, capacidadCombustible=$capacidadCombustible, combustibleActual=$combustibleActual, kilometrosActuales=$kilometrosActuales, esElectrico=$esHibrido)"
     }
 }
